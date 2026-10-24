@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<title>People | Astrodynamics & Space Mission Analysis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/page-overrides.css">
+<script defer src="https://ciaramcgrath91.github.io/sustainable_space/js/vendor/fontawesome/all.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+#about .portrait-frame { display:block; position:relative; width:min(220px, 100%); aspect-ratio:1; overflow:hidden; border-radius:50%; margin:0 auto 2.4rem; }
+#about .portrait-frame .s-about__pic { position:absolute; inset:0; display:block; width:100%; height:100%; min-width:0; max-width:none; aspect-ratio:auto; margin:0; border:0; border-radius:0; object-fit:cover; object-position:center; }
+#about .portrait-frame--shalom .s-about__pic { transform:translateX(3%) scale(1.12); }
+#about .portrait-frame--carys .s-about__pic { transform:translateY(6%) scale(1.12); }
+#about .portrait-frame--mairi .s-about__pic { transform:translateX(-3%) scale(1.08); }
+.person-role { margin:0 0 1.6rem; color:#71b7e6; font-size:1.35rem; font-weight:600; letter-spacing:.1em; line-height:1.4; text-transform:uppercase; }
+#about .portrait-frame, .person-role, .person-profiles a {
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease, color .2s ease;
+}
+#about .person-row:hover .portrait-frame,
+#about .person-row:focus-within .portrait-frame {
+    transform:translateY(-3px);
+    box-shadow:0 0 0 3px rgba(22, 131, 216, .85), 0 10px 24px rgba(0, 0, 0, .22);
+}
+#about .person-row:hover .person-role,
+#about .person-row:focus-within .person-role { color:#fff; }
+.person-profiles a:hover,
+.person-profiles a:focus-visible {
+    color:#fff;
+    background-color:rgba(22, 131, 216, .18);
+    border-color:#71b7e6;
+    text-decoration:none;
+}
+.person-profiles a:focus-visible { outline:3px solid #71b7e6; outline-offset:3px; }
+
+
+/* Unified research-team card layout. */
+.s-header { top:0; background:#000; }
+.page-spacer { display:none; }
+#about {
+    --card-border:#244260;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:2.4rem;
+    padding:12rem max(2.4rem, calc((100% - 1180px) / 2)) 8rem;
+    background:#07101a;
+    color:#e3edf5;
+}
+#about > .row { width:auto; margin:0; }
+#about > .row:first-child { grid-column:1 / -1; margin-bottom:2rem; }
+#about .s-about__content h3 { margin:0 0 1.2rem; color:#e3edf5; font-size:4.8rem; }
+#about .team-intro { max-width:68rem; margin:0; color:#b8cddd; font-size:1.8rem; line-height:1.65; }
+#about > .person-row {
+    display:block;
+    min-width:0;
+    padding:2.8rem;
+    background:#102033;
+    border:1px solid var(--card-border);
+    border-top:1px solid var(--card-border);
+    border-radius:2px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+#about > .person-row:hover, #about > .person-row:focus-within {
+    transform:translateY(-3px);
+    border-color:#1683d8;
+    box-shadow:0 12px 28px rgba(0, 0, 0, .45);
+}
+#about .person-row .column { width:100%; max-width:none; padding:0; }
+#about .portrait-frame { width:150px; margin:0 0 2rem; }
+#about .s-about__content p { color:#d1e0eb; font-size:1.55rem; line-height:1.65; }
+#about .s-about__content > p a { color:#71b7e6; }
+#about .person-role { color:#71b7e6; font-size:1.2rem; }
+#about .research-tags { display:flex; flex-wrap:wrap; gap:.7rem; margin:0 0 1.8rem; padding:0; list-style:none; }
+#about .research-tags li { padding:.35rem .75rem; color:#cfe4f4; background:#0b1a2b; border:1px solid #24547c; border-radius:99px; font-size:1.15rem; font-weight:600; line-height:1.3; }
+#about .person-profiles { margin:2rem 0 0; }
+#about .person-profiles a { color:#e3edf5; border-color:#1683d8; background:#0b1a2b; }
+#about .person-profiles a:hover, #about .person-profiles a:focus-visible { color:#fff; background:#0066b3; border-color:#71b7e6; }
+#about .person-row hr { display:none; }
+#about > .join-card { display:flex; align-items:center; background:#004a82; border-color:#0066b3; }
+#about .join-card h4 { margin:0 0 1rem; color:#fff; font-size:2.6rem; }
+#about .join-card p { max-width:58rem; margin:0; color:#fff; }
+#about .join-card .person-profiles a { color:#fff; background:transparent; border-color:#9bd0ef; }
+#about .join-card .person-profiles a:hover, #about .join-card .person-profiles a:focus-visible { color:#004a82; background:#fff; border-color:#fff; }
+
+@media screen and (max-width:800px) {
+    #about { grid-template-columns:1fr; padding:10rem 2.4rem 5rem; }
+    #about .s-about__content h3 { font-size:4rem; }
+}
+</style></head>
+<body id="top" class="ss-preload">
+<div id="preloader"><div id="loader"></div></div><header class="s-header"><div class="row s-header__nav-wrap"><nav class="s-header__nav" aria-label="Primary navigation"><ul><li><a href="index.html">Home</a></li><li><a href="projects/index.html">Projects</a></li><li class="current"><a href="people.html">People</a></li><li><a href="papers.html">Papers</a></li><li><a href="media.html">Media</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></div><a class="s-header__menu-toggle" href="#0" title="Menu"><span class="s-header__menu-icon"></span></a></header><main><div class="page-spacer"></div><section id="about" class="s-about target-section">
+        <div class="row"><div class="column large-12 s-about__content"><h3>People</h3><p class="team-intro">An interdisciplinary team developing practical, responsible approaches to astrodynamics, space mission design and sustainable space activity.</p></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame"><img class="s-about__pic" src="images/avatars/Ciara_flip.png" alt="Dr Ciara McGrath" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        
+        <p class="person-role">Lecturer in Aerospace Systems</p><ul class="research-tags"><li>Astrodynamics</li><li>Mission design</li><li>Space sustainability</li></ul><p>
+            <a href = "https://research.manchester.ac.uk/en/persons/ciara.mcgrath" target="_blank">Dr Ciara McGrath</a> is a lecturer in aerospace systems at the <a href="https://www.manchester.ac.uk/" target="_blank">University of Manchester</a>, United Kingdom, 
+            with expertise in astrodynamics and space mission design. She is the <a href="https://www.theiet.org/" target="_blank">Institution of Engineering and Technology (IET)</a>
+            <a href="https://youngwomenengineer.theiet.org/" target="_blank"> Young Woman Engineer of the Year 2021</a>, and has appeared on TV, radio, and podcasts, and given a <a href="https://www.ted.com/talks/dr_ciara_mcgrath_revolutionising_space_with_your_very_own_satellite" target="_blank">TEDx talk</a>, 
+            promoting engineering and the space industry to a wide audience. She has worked in the space industry in the Republic
+             of Ireland, the United Kingdom, Germany, and the Netherlands, and in 2017 was a visiting Fulbright scholar at the 
+             Massachusetts Institute of Technology (MIT), USA.
+        </p>
+        <div class="person-profiles" aria-label="Profiles for Dr Ciara McGrath"><a href="https://research.manchester.ac.uk/en/persons/ciara.mcgrath" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/ciaramcgrath/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame"><img class="s-about__pic" src="images/avatars/Manu.jpg" alt="Dr Manu H. Nair" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        <p class="person-role">Lecturer in Space Engineering</p><ul class="research-tags"><li>Sustainable missions</li><li>Space robotics</li><li>Systems engineering</li></ul><p><a href="https://research.manchester.ac.uk/en/persons/manu-nair" target="_blank" rel="noopener noreferrer">Dr Manu H. Nair</a> is a Lecturer in Space Engineering at the University of Manchester, United Kingdom. His research develops tools for sustainable space mission design, assessing orbital capacity and wider mission impacts. He completed a PhD in Space Robotics at the University of Lincoln in 2024, developing the End-Over-End Walking Robot (E-Walker) for in-space assembly and disassembly of infrastructure. His work spans space robotics, model-based systems engineering and space sustainability, including the UK Space Agency-led Active Debris Removal feasibility study, LEOPARD. He represented India at RoboOlympics 2018, leading a team to two gold medals and one bronze medal.</p>
+        <div class="person-profiles" aria-label="Profiles for Dr Manu H. Nair"><a href="https://research.manchester.ac.uk/en/persons/manu-nair" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/manu-h-nair-059951140/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame"><img class="s-about__pic" src="images/avatars/JM_image.png" alt="John Mackintosh" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        <p class="person-role">PhD Researcher</p><ul class="research-tags"><li>Life-cycle assessment</li><li>Mission sustainability</li><li>Collision risk</li></ul><p><a href="https://research.manchester.ac.uk/en/persons/john-mackintosh" target="_blank" rel="noopener noreferrer">John Mackintosh</a> is a postgraduate researcher at the University of Manchester, developing tools to assess the societal benefits and environmental impacts of space missions during early design. His research on collision risk for Earth observation satellites is published in Advances in Space Research, and his work has been featured by the BBC. His report with Callala examines pollution from satellite manufacture and launch and space-specific life cycle assessment (LCA). He was a finalist in the British Interplanetary Society Student Paper Competition 2023 for work on mission sustainability scoring, and has presented internationally on mission benefits, orbital impacts and LCA.</p>
+        <div class="person-profiles" aria-label="Profiles for John Mackintosh"><a href="https://research.manchester.ac.uk/en/persons/john-mackintosh" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/jcmackintosh/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame"><img class="s-about__pic" src="images/avatars/Bel.jpg" alt="Belén López Pardo" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        <p class="person-role">PhD Researcher</p><ul class="research-tags"><li>Astrodynamics</li><li>Interplanetary design</li><li>Orbital modelling</li></ul><p><a href = "https://research.manchester.ac.uk/en/persons/belen-lopez-pardo" target="_blank">Belén López Pardo</a> is a postgraduate researcher at the University of Manchester specialising in astrodynamics and interplanetary mission design. Her research combines high-fidelity physics with computational efficiency to model complex orbital perturbations. She has presented at the AAS/AIAA Astrodynamics Specialist Conference and International Astronautical Congress, and developed satellite thermal-modelling solvers as a consultant for ESR Technology Ltd. An AFHEA-qualified educator, she has supported undergraduate teaching and projects, served as a PASS leader, and led the University’s CanSat team. She received the Royal Aeronautical Society Teddy Fielding Award.</p>
+        <div class="person-profiles" aria-label="Profiles for Belén López Pardo"><a href="https://research.manchester.ac.uk/en/persons/belen-lopez-pardo" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/belenlopezpardo/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame portrait-frame--shalom"><img class="s-about__pic" src="images/avatars/Shalom.png" alt="Shalom Treblow" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        <p class="person-role">PhD Researcher</p><ul class="research-tags"><li>Astrodynamics</li><li>Satellite constellations</li><li>Mission design</li></ul><p>
+            <a href = "https://research.manchester.ac.uk/en/persons/shalom-treblow" target="_blank">Shalom Treblow</a>
+            is a postgraduate researcher in aerospace systems at the University of Manchester with expertise in astrodynamics and space mission design. His prior work has been published by the AIAA Journal of Spacecraft and Rockets. Shalom 
+            Treblow holds a first-class master’s degree in aerospace engineering from the University of Manchester and received 
+            the Best Student Award in 2023. His research aims to use an analytical approach to develop elegant and adaptable 
+            solutions that enable the collection of vital data needed on Earth by way of small reconfigurable satellite constellations.
+        </p>
+        <div class="person-profiles" aria-label="Profiles for Shalom Treblow"><a href="https://research.manchester.ac.uk/en/persons/shalom-treblow" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/shalom-t-048533266/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame portrait-frame--carys"><img class="s-about__pic" src="images/avatars/Carys.png" alt="Carys Thomas" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        <p class="person-role">PhD Researcher</p><ul class="research-tags"><li>Space sustainability</li><li>Environmental impacts</li><li>Climate</li></ul><p>
+            <a href = "https://research.manchester.ac.uk/en/persons/carys-thomas" target="_blank">Carys Thomas</a>
+             is a postgraduate researcher at the University of Manchester, working on evaluating the space industry's 
+             current and future impacts on climate change and identifying areas for positive change. They presented their 
+             work on quantifying a criterion for a net-positive active debris removal mission and space debris ranking model 
+             at the 76th International Astronautical Conference (IAC 2025) in Sydney, Australia. Carys’ research focuses on the
+             environmental impact of space missions and their human impacts.
+        </p>
+        <div class="person-profiles" aria-label="Profiles for Carys Thomas"><a href="https://research.manchester.ac.uk/en/persons/carys-thomas" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/carys-m-thomas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+<div class="row person-row"><div class="column large-3 tab-12"><span class="portrait-frame portrait-frame--mairi"><img class="s-about__pic" src="images/avatars/Mairi.jpg" alt="Mairi Johnston" width="220" height="220" loading="lazy"></span></div><div class="column large-9 tab-12 s-about__content">
+        <p class="person-role">PhD Researcher</p><ul class="research-tags"><li>Life-cycle assessment</li><li>Satellite design</li><li>Space debris</li></ul><p>
+            <a href = "https://research.manchester.ac.uk/en/persons/mairi-johnston" target="_blank">Mairi Johnston</a> 
+            is a PhD student at the University of Manchester. Her research explores a range of the environmental
+             impacts of the space industry, with particular focus on satellite design. Mairi’s recent work includes a comprehensive
+              life cycle assessment of the University of Manchester’s SOAR CubeSat, informing the long-term development of simplified
+               life cycle assessment methodology to quantify the terrestrial impacts of the space industry. Having attended ESA Academy’s
+               Space Debris Training Course 2025, Mairi is also interested in the interactions between in-space and on-Earth dimensions
+               of space sustainability.
+        </p>
+        <div class="person-profiles" aria-label="Profiles for Mairi Johnston"><a href="https://research.manchester.ac.uk/en/persons/mairi-johnston" target="_blank" rel="noopener noreferrer">Pure profile ↗</a><a href="https://www.linkedin.com/in/mairi-johnston/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><hr></div></div>
+    <div class="row person-row join-card"><div class="column large-12 s-about__content"><h4>Join the group</h4><p>We welcome enquiries from prospective PhD candidates and collaborators who want to help shape a more responsible future for space activity.</p><div class="person-profiles"><a href="contact.html">Contact us about opportunities ↗</a></div></div></div></section></main><footer class="s-footer"><div class="row"><div class="column large-4 medium-6 w-1000-stack s-footer__social-block"><ul class="s-footer__social"><li><a href="https://www.research.manchester.ac.uk/portal/ciara.mcgrath.html" target="_blank" rel="noopener noreferrer" aria-label="University profile"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a></li><li><a href="https://www.linkedin.com/in/ciaramcgrath/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li></ul></div><div class="column large-7 medium-6 w-1000-stack ss-copyright"><span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span></div></div><div class="ss-go-top"><a title="Back to Top" href="#top">↑</a></div></footer><script src="https://ciaramcgrath91.github.io/sustainable_space/js/plugins.js"></script><script src="https://ciaramcgrath91.github.io/sustainable_space/js/main.js"></script></body></html>
+
+
+
+
+
+
+
